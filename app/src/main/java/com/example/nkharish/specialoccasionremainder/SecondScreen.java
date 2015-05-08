@@ -1,11 +1,14 @@
 package com.example.nkharish.specialoccasionremainder;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.facebook.FacebookSdk;
 
 
 public class SecondScreen extends ActionBarActivity {
@@ -39,6 +42,7 @@ public class SecondScreen extends ActionBarActivity {
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -57,6 +61,13 @@ public class SecondScreen extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
+        if (id == R.id.addoccasion) {
+
+            Intent intent2 = new Intent(SecondScreen.this, DataPicker.class);
+            startActivity(intent2);
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
